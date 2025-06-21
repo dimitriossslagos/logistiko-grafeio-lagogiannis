@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Λογιστικό Γραφείο Λαγογιάννη | Επαγγελματικές Λογιστικές Υπηρεσίες</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --primary-light: #3379c6;
+            --secondary: #0d8a72;
+            --secondary-light: #39a18d;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --accent: #ffc107;
+            --accent-dark: #e0a800;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-light);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 25px auto 0;
+            font-size: 1.1rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-left: 12px;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1.8rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.7rem;
+            cursor: pointer;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 40px 25px;
+            border: 1px solid var(--light-gray);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+            border-color: var(--primary-light);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .service-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            color: var(--secondary);
+        }
+
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            background-color: var(--light);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+            border-color: var(--secondary-light);
+        }
+
+        .feature-icon {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .feature:hover .feature-icon {
+            color: var(--secondary);
+            transform: scale(1.1);
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        /* Team Section */
+        .team {
+            background-color: var(--light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid var(--light-gray);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .member-photo {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-photo img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 25px 20px;
+        }
+
+        .member-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .member-position {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .member-info p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .member-contact {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .member-contact a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light);
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .member-contact a:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Appointment Section */
+        .appointment-form {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .form-group {
+            flex: 1 0 300px;
+            padding: 0 15px;
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--light);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-info h3 {
+            font-size: 1.7rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-right: 15px;
+            min-width: 30px;
+            margin-top: 5px;
+        }
+
+        .contact-item-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .contact-item-content p, 
+        .contact-item-content a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item-content a:hover {
+            color: var(--primary);
+        }
+
+        .hours {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: auto;
+        }
+
+        .hours h4 {
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-size: 1.3rem;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-item:last-child {
+            border-bottom: none;
+        }
+
+        .hours-day {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            padding: 5px 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact i {
+            margin-right: 12px;
+            color: var(--accent);
+            min-width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .map-container {
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section {
+                padding: 70px 0;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.7rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                background: var(--white);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hero {
+                height: auto;
+                padding: 100px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+            
+            .form-row {
+                margin: 0;
+            }
+            
+            .form-group {
+                flex: 1 0 100%;
+                padding: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+            
+            .contact-form,
+            .contact-info,
+            .appointment-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-calculator logo-icon"></i>
+                    <h1>Λογιστικό Γραφείο Λαγογιάννη</h1>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#home">Αρχική</a></li>
+                    <li><a href="#services">Υπηρεσίες</a></li>
+                    <li><a href="#team">Ομάδα</a></li>
+                    <li><a href="#about">Σχετικά</a></li>
+                    <li><a href="#appointment">Ραντεβού</a></li>
+                    <li><a href="#contact">Επικοινωνία</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Επαγγελματικές Λογιστικές & Φοροτεχνικές Υπηρεσίες</h1>
+                <p>Αξιόπιστες λύσεις για ιδιώτες και επιχειρήσεις με επαγγελματισμό και ακρίβεια</p>
+                <div class="hero-btns">
+                    <a href="#appointment" class="btn btn-primary">Κλείστε Ραντεβού</a>
+                    <a href="#services" class="btn">Δείτε Υπηρεσίες</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Οι Υπηρεσίες μας</h2>
+                <p>Προσφέρουμε πλήρες φάσμα λογιστικών και φοροτεχνικών υπηρεσιών, με συνέπεια και επαγγελματισμό</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Τήρηση Βιβλίων</h3>
+                    <p>Απλογραφικά και διπλογραφικά βιβλία για όλους τους τύπους επιχειρήσεων με σύγχρονα λογιστικά συστήματα.</p>
+                    <a href="#appointment" class="service-link">Δείτε περισσότερα <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Μισθοδοσία & Εργατικά</h3>
+                    <p>Συμπληρωματική δήλωση μισθοδοσίας, ασφαλιστικές εισφορές και υποβολή ΜΙΣΘΩΣ με ακρίβεια και έγκαιρα.</p>
+                    <a href="#appointment" class="service-link">Δείτε περισσότερα <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Έναρξη - Διακοπή - Μεταβολές</h3>
+                    <p>Έναρξη νέας επιχείρησης, διακοπή λειτουργίας και μεταβολές στα στοιχεία της επιχείρησης με εμπειρία.</p>
+                    <a href="#appointment" class="service-link">Δείτε περισσότερα <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Φορολογικές Δηλώσεις</h3>
+                    <p>Ε1, Ε2, Ε3, Ε9 και όλες τις υποχρεωτικές φορολογικές δηλώσεις με σύγχρονες μεθόδους υποβολής.</p>
+                    <a href="#appointment" class="service-link">Δείτε περισσότερα <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Επιστροφή ΦΠΑ</h3>
+                    <p>Υποβολή δηλώσεων ΦΠΑ και διαδικασίες επιστροφής ΦΠΑ με γνώση των τελευταίων νομοθετικών αλλαγών.</p>
+                    <a href="#appointment" class="service-link">Δείτε περισσότερα <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Φοροτεχνική Συμβουλευτική</h3>
+                    <p>Συμβουλές για βέλτιστη φορολογική διαχείριση και σχεδιασμό με εξατομικευμένη προσέγγιση.</p>
+                    <a href="#appointment" class="service-link">Δείτε περισσότερα <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Γιατί να μας επιλέξετε</h2>
+                <p>Ποιοτικές υπηρεσίες και εξατομικευμένη προσέγγιση για κάθε πελάτη</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>25+ Χρόνια Εμπειρία</h3>
+                    <p>Πολυετής εμπειρία στον κλάδο με ενημέρωση στις τελευταίες νομοθετικές αλλαγές και συνεχή εκπαίδευση.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Προσωπική Εξυπηρέτηση</h3>
+                    <p>Εξατομικευμένη προσέγγιση και προσοχή στις ανάγκες κάθε πελάτη με αποκλειστικό υπεύθυνο επικοινωνίας.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Συνεχής Επικοινωνία</h3>
+                    <p>Διαθέσιμοι για απορίες και ενημέρωση για την πορεία των υποθέσεών σας μέσω πολλαπλών καναλιών επικοινωνίας.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Το Πρόσωπικό μας</h2>
+                <p>Γνωρίστε τους ειδικούς που θα σας εξυπηρετήσουν</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Γεώργιος Λαγογιάννης">
+                    </div>
+                    <div class="member-info">
+                        <h3>Γεώργιος Λαγογιάννης</h3>
+                        <span class="member-position">Διευθυντής - Λογιστής</span>
+                        <p>Ειδικευμένος στη φοροτεχνική συμβουλευτική με 25+ χρόνια εμπειρίας και πτυχίο Λογιστικής.</p>
+                        <div class="member-contact">
+                            <a href="mailto:g.lagoyiannis@logistiki-lagoyianni.gr"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+306973889391"><i class="fas fa-phone"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Αντώνης Λαγογιάννης">
+                    </div>
+                    <div class="member-info">
+                        <h3>Αντώνης Λαγογιάννης</h3>
+                        <span class="member-position">Φοροτεχνικός</span>
+                        <p>Ειδικεύεται σε μισθοδοσία και εργατικό δίκαιο με πτυχίο Οικονομικών και 10+ χρόνια εμπειρίας.</p>
+                        <div class="member-contact">
+                            <a href="mailto:a.lagoyiannis@logistiki-lagoyianni.gr"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+302310123457"><i class="fas fa-phone"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Μαρία Παπανικολάου">
+                    </div>
+                    <div class="member-info">
+                        <h3>Μαρία Παπανικολάου</h3>
+                        <span class="member-position">Λογίστρια</span>
+                        <p>Ειδικεύεται σε φορολογικές δηλώσεις και τήρηση βιβλίων με πτυχίο Λογιστικής και 8+ χρόνια εμπειρίας.</p>
+                        <div class="member-contact">
+                            <a href="mailto:m.papanikolaou@logistiki-lagoyianni.gr"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+302310123458"><i class="fas fa-phone"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Σχετικά με εμάς</h2>
+                <p>Η ιστορία και οι αξίες του γραφείου μας</p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div>
+                    <div style="height: 400px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; padding: 30px; text-align: center;">
+                        <div>
+                            <i class="fas fa-building" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 15px;">25+ Χρόνια Εμπειρίας</h3>
+                            <p>Συνεχής παροχή ποιοτικών υπηρεσιών από το 1999</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.8rem; color: var(--primary); margin-bottom: 20px;">Η Ιστορία μας</h3>
+                    <p style="margin-bottom: 20px; color: var(--gray); line-height: 1.7;">Το λογιστικό μας γραφείο ιδρύθηκε από τον Γεώργιο Λαγογιάννη το 1999, με στόχο την παροχή εξατομικευμένων και υπεύθυνων λογιστικών υπηρεσιών. Με πολυετή εμπειρία και συνεχή κατάρτιση, εξυπηρετούμε ιδιώτες και επιχειρήσεις με συνέπεια και εχεμύθεια.</p>
+                    <p style="margin-bottom: 25px; color: var(--gray); line-height: 1.7;">Στόχος μας είναι να προσφέρουμε ολοκληρωμένες λύσεις που καλύπτουν όλες τις λογιστικές και φοροτεχνικές ανάγκες των πελατών μας, βοηθώντας τους να επικεντρωθούν στην ανάπτυξη των επιχειρήσεών τους.</p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                        <div style="display: flex; align-items: flex-start;">
+                            <i class="fas fa-check-circle" style="color: var(--secondary); font-size: 1.4rem; margin-right: 15px; margin-top: 5px;"></i>
+                            <div>
+                                <h4 style="font-size: 1.2rem; margin-bottom: 8px; color: var(--dark);">Αξιοπιστία</h4>
+                                <p style="color: var(--gray);">Συνεπείς και έγκυρες υπηρεσίες</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start;">
+                            <i class="fas fa-check-circle" style="color: var(--secondary); font-size: 1.4rem; margin-right: 15px; margin-top: 5px;"></i>
+                            <div>
+                                <h4 style="font-size: 1.2rem; margin-bottom: 8px; color: var(--dark);">Επαγγελματισμός</h4>
+                                <p style="color: var(--gray);">Συνεχής εκπαίδευση και ενημέρωση</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start;">
+                            <i class="fas fa-check-circle" style="color: var(--secondary); font-size: 1.4rem; margin-right: 15px; margin-top: 5px;"></i>
+                            <div>
+                                <h4 style="font-size: 1.2rem; margin-bottom: 8px; color: var(--dark);">Εχεμύθεια</h4>
+                                <p style="color: var(--gray);">Απόλυτη διασφάλιση δεδομένων</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start;">
+                            <i class="fas fa-check-circle" style="color: var(--secondary); font-size: 1.4rem; margin-right: 15px; margin-top: 5px;"></i>
+                            <div>
+                                <h4 style="font-size: 1.2rem; margin-bottom: 8px; color: var(--dark);">Εξατομίκευση</h4>
+                                <p style="color: var(--gray);">Λύσεις προσαρμοσμένες στις ανάγκες σας</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="section" style="background-color: var(--light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Κλείστε Ραντεβού</h2>
+                <p>Συμπληρώστε τη φόρμα και θα σας επικοινωνήσουμε</p>
+            </div>
+            
+            <div class="appointment-form">
+                <form id="appointment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="appointment-name">Όνομα *</label>
+                            <input type="text" id="appointment-name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointment-email">Email *</label>
+                            <input type="email" id="appointment-email" name="email" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="appointment-phone">Τηλέφωνο *</label>
+                            <input type="tel" id="appointment-phone" name="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointment-service">Υπηρεσία *</label>
+                            <select id="appointment-service" name="service" class="form-control" required>
+                                <option value="">Επιλέξτε υπηρεσία</option>
+                                <option value="Τήρηση Βιβλίων">Τήρηση Βιβλίων</option>
+                                <option value="Μισθοδοσία">Μισθοδοσία</option>
+                                <option value="Φορολογικές Δηλώσεις">Φορολογικές Δηλώσεις</option>
+                                <option value="Έναρξη Επιχείρησης">Έναρξη Επιχείρησης</option>
+                                <option value="Επιστροφή ΦΠΑ">Επιστροφή ΦΠΑ</option>
+                                <option value="Φοροτεχνική Συμβουλευτική">Φοροτεχνική Συμβουλευτική</option>
+                                <option value="Άλλο">Άλλο</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="appointment-date">Προτιμώμενη Ημερομηνία</label>
+                            <input type="date" id="appointment-date" name="date" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="appointment-time">Προτιμώμενη Ώρα</label>
+                            <select id="appointment-time" name="time" class="form-control">
+                                <option value="">Επιλέξτε ώρα</option>
+                                <option value="09:00 - 10:00">09:00 - 10:00</option>
+                                <option value="10:00 - 11:00">10:00 - 11:00</option>
+                                <option value="11:00 - 12:00">11:00 - 12:00</option>
+                                <option value="12:00 - 13:00">12:00 - 13:00</option>
+                                <option value="17:00 - 18:00">17:00 - 18:00</option>
+                                <option value="18:00 - 19:00">18:00 - 19:00</option>
+                                <option value="19:00 - 20:00">19:00 - 20:00</option>
+                                <option value="20:00 - 21:00">20:00 - 21:00</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment-message">Μήνυμα (Προαιρετικό)</label>
+                        <textarea id="appointment-message" name="message" class="form-control" placeholder="Περιγράψτε συνοπτικά το αίτημά σας..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">Κλείσιμο Ραντεβού</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Επικοινωνήστε Μαζί μας</h2>
+                <p>Στείλτε μας το μήνυμά σας και θα σας απαντήσουμε το συντομότερο δυνατό</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Όνομα *</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Θέμα *</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Μήνυμα *</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">Αποστολή Μηνύματος</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Στοιχεία Επικοινωνίας</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-item-content">
+                                <h4>Διεύθυνση</h4>
+                                <p>ΒΟΛΟΥΔΑΚΗΔΩΝ 6, 54645, Θεσσαλονίκη</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-item-content">
+                                <h4>Τηλέφωνο</h4>
+                                <p><a href="tel:+302310123456">2310 123456</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-item-content">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@logistiki-lagoyianni.gr">info@logistiki-lagoyianni.gr</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3230.1079153908913!2d24.0201699!3d35.5128534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149c7dbe3cc62593%3A0x41a53ded7786bc75!2sVoloudakidon%2C%20Chania%20731%2034!5e0!3m2!1sen!2sgr!4v1718800000000!5m2!1sen!2sgr" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    
+                    <div class="hours">
+                        <h4>Ώρες Λειτουργίας</h4>
+                        <div class="hours-item">
+                            <span class="hours-day">Δευτέρα - Παρασκευή:</span>
+                            <span>08:30 - 15:00, 17:00 - 21:30</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Σάββατο:</span>
+                            <span>09:00 - 14:00</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Κυριακή:</span>
+                            <span>Κλειστά</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Λογιστικό Γραφείο Λαγογιάννη</h3>
+                    <p>Παρέχουμε αξιόπιστες λογιστικές και φοροτεχνικές υπηρεσίες για ιδιώτες και επιχειρήσεις με επαγγελματισμό και ακεραιότητα.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Γρήγοροι Σύνδεσμοι</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Αρχική</a></li>
+                        <li><a href="#services">Υπηρεσίες</a></li>
+                        <li><a href="#team">Ομάδα</a></li>
+                        <li><a href="#about">Σχετικά με εμάς</a></li>
+                        <li><a href="#appointment">Κλείστε Ραντεβού</a></li>
+                        <li><a href="#contact">Επικοινωνία</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Υπηρεσίες</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Τήρηση Βιβλίων</a></li>
+                        <li><a href="#services">Μισθοδοσία & Εργατικά</a></li>
+                        <li><a href="#services">Έναρξη Επιχείρησης</a></li>
+                        <li><a href="#services">Φορολογικές Δηλώσεις</a></li>
+                        <li><a href="#services">Επιστροφή ΦΠΑ</a></li>
+                        <li><a href="#services">Φοροτεχνική Συμβουλευτική</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Επικοινωνία</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> ΒΟΛΟΥΔΑΚΗΔΩΝ 6, 54645, Θεσσαλονίκη</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+302310123456">2310 123456</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@logistiki-lagoyianni.gr">info@logistiki-lagoyianni.gr</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Λογιστικό Γραφείο Λαγογιάννη. Όλα τα δικαιώματα διατηρούνται.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Προσθήκη της βιβλιοθήκης EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        // Προετοιμασία EmailJS
+        (function() {
+            // Αντικαταστήστε με το δικό σας Public Key
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+
+        // Υποβολή φόρμας επικοινωνίας
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Αντικαταστήστε με το Service ID και Template ID σας
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_CONTACT_TEMPLATE_ID', this)
+                .then(function() {
+                    alert('Το μήνυμά σας εστάλη επιτυχώς!');
+                    this.reset();
+                }, function(error) {
+                    alert('Σφάλμα: ' + JSON.stringify(error));
+                });
+        });
+
+        // Υποβολή φόρμας ραντεβού
+        document.getElementById('appointment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Αντικαταστήστε με το Service ID και Template ID σας
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_APPOINTMENT_TEMPLATE_ID', this)
+                .then(function() {
+                    alert('Το αίτημα ραντεβού σας εστάλη! Θα επικοινωνήσουμε σύντομα.');
+                    this.reset();
+                }, function(error) {
+                    alert('Σφάλμα: ' + JSON.stringify(error));
+                });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        // Set minimum date for appointment to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('appointment-date').min = today;
+
+        // Initialize time slots based on day of week
+        const timeSelect = document.getElementById('appointment-time');
+        document.getElementById('appointment-date').addEventListener('change', function() {
+            const selectedDate = new Date(this.value);
+            const dayOfWeek = selectedDate.getDay(); // 0 = Sunday, 1 = Monday, etc.
+            
+            // Clear previous options
+            timeSelect.innerHTML = '<option value="">Επιλέξτε ώρα</option>';
+            
+            // Add time slots based on day of week
+            if (dayOfWeek === 0) { // Sunday
+                // Closed
+            } else if (dayOfWeek === 6) { // Saturday
+                timeSelect.innerHTML += `
+                    <option value="09:00 - 10:00">09:00 - 10:00</option>
+                    <option value="10:00 - 11:00">10:00 - 11:00</option>
+                    <option value="11:00 - 12:00">11:00 - 12:00</option>
+                    <option value="12:00 - 13:00">12:00 - 13:00</option>
+                `;
+            } else { // Weekdays
+                timeSelect.innerHTML += `
+                    <option value="09:00 - 10:00">09:00 - 10:00</option>
+                    <option value="10:00 - 11:00">10:00 - 11:00</option>
+                    <option value="11:00 - 12:00">11:00 - 12:00</option>
+                    <option value="12:00 - 13:00">12:00 - 13:00</option>
+                    <option value="17:00 - 18:00">17:00 - 18:00</option>
+                    <option value="18:00 - 19:00">18:00 - 19:00</option>
+                    <option value="19:00 - 20:00">19:00 - 20:00</option>
+                    <option value="20:00 - 21:00">20:00 - 21:00</option>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
